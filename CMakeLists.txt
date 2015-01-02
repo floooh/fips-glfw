@@ -35,7 +35,7 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
                 x11_platform.h xkb_unicode.h linux_joystick.h
                 posix_time.h posix_tls.h
                 x11_init.c x11_monitor.c x11_window.c
-                xkd_unicode.c linux_joystick.c posix_time.c posix_tlc.c
+                xkb_unicode.c linux_joystick.c posix_time.c posix_tls.c
                 glx_context.h glx_context.c
             )
         endif()
@@ -44,6 +44,8 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
     # hack to silence some warnings in GLFW code
     if (FIPS_MACOS)
         set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "-Wno-sign-compare -Wno-deprecated-declarations")
+    elseif(FIPS_LINUX)
+        set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "-Wno-sign-compare")
     endif()
 endif()
 
