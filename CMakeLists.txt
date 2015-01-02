@@ -40,5 +40,10 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
             )
         endif()
     fips_end_lib()
+
+    # hack to silence some warnings in GLFW code
+    if (FIPS_MACOS)
+        set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "-Wno-sign-compare -Wno-deprecated-declarations")
+    endif()
 endif()
 
