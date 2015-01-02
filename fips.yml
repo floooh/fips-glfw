@@ -1,0 +1,9 @@
+#
+# fips-glfw
+#
+---
+exports:
+    header-dirs: [ glfw/include ]
+    modules :
+        glfw3: . 
+
