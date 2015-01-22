@@ -46,6 +46,8 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
         set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "-Wno-sign-compare -Wno-deprecated-declarations")
     elseif(FIPS_LINUX)
         set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "-Wno-sign-compare")
+    elseif(FIPS_WINDOWS)
+        set_target_properties(glfw3 PROPERTIES COMPILE_FLAGS "/wd4152 /wd4204 /wd4242 /wd4244 /wd4668 /wd4996")
     endif()
 endif()
 
