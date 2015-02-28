@@ -1,10 +1,18 @@
+if (NOT FIPS_IMPORT)
+    cmake_minimum_required(VERSION 2.8)
+    get_filename_component(FIPS_ROOT_DIR "../fips" ABSOLUTE)
+    include("${FIPS_ROOT_DIR}/cmake/fips.cmake")
+    fips_setup()
+    fips_project(fips-glfw)
+endif()
+
 if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
 
     fips_begin_lib(glfw3)
-        
+
         include_directories(. glfw/src glfw/include)
         add_definitions(-D_GLFW_USE_CONFIG_H)
-        
+
         fips_files(glfw_config.h)
         fips_dir(glfw/include/GLFW)
         fips_files(glfw3.h glfw3native.h)
