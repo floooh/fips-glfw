@@ -59,3 +59,6 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
     endif()
 endif()
 
+if (NOT FIPS_IMPORT)
+    fips_finish()
+endif()
