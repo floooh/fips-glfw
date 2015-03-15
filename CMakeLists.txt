@@ -14,9 +14,9 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
         add_definitions(-D_GLFW_USE_CONFIG_H)
 
         fips_files(glfw_config.h)
-        fips_dir(glfw/include/GLFW)
+        fips_dir(glfw/include/GLFW GROUP .)
         fips_files(glfw3.h glfw3native.h)
-        fips_dir(glfw/src)
+        fips_dir(glfw/src GROUP .)
         fips_files(
             internal.h
             context.c init.c input.c monitor.c window.c
