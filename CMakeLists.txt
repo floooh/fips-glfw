@@ -12,6 +12,9 @@ if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
 
         include_directories(. glfw/src glfw/include)
         add_definitions(-D_GLFW_USE_CONFIG_H)
+        if (FIPS_WINDOWS)
+            add_definitions(-D_GLFW_USE_DWM_SWAP_INTERVAL)
+        endif()
 
         fips_files(glfw_config.h)
         fips_dir(glfw/include/GLFW GROUP .)
