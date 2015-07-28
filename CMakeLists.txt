@@ -6,7 +6,7 @@ if (NOT FIPS_IMPORT)
     fips_project(fips-glfw)
 endif()
 
-if (FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX)
+if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
 
     fips_begin_lib(glfw3)
 
