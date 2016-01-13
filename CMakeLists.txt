@@ -35,7 +35,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
         elseif (FIPS_WINDOWS)
             add_definitions(-DFIPS_GLFW_WINDOWS=1)
             fips_files(
-                win32_platform.h win32_tls.h win32_joystick.h
+                win32_platform.h win32_joystick.h
                 win32_init.c win32_monitor.c win32_time.c
                 win32_tls.c win32_window.c win32_joystick.c
                 wgl_context.h wgl_context.c
