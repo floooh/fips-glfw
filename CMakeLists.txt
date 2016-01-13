@@ -27,17 +27,17 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
         if (FIPS_MACOS)
             add_definitions(-DFIPS_GLFW_MACOS=1)
             fips_files(
-                cocoa_platform.h iokit_joystick.h posix_tls.h
+                cocoa_platform.h cocoa_joystick.h posix_tls.h
                 cocoa_init.m cocoa_monitor.m cocoa_window.m
-                iokit_joystick.m mach_time.c posix_tls.c
+                cocoa_joystick.m cocoa_time.c posix_tls.c
                 nsgl_context.h nsgl_context.m
             )
         elseif (FIPS_WINDOWS)
             add_definitions(-DFIPS_GLFW_WINDOWS=1)
             fips_files(
-                win32_platform.h win32_tls.h winmm_joystick.h
+                win32_platform.h win32_tls.h win32_joystick.h
                 win32_init.c win32_monitor.c win32_time.c
-                win32_tls.c win32_window.c winmm_joystick.c
+                win32_tls.c win32_window.c win32_joystick.c
                 wgl_context.h wgl_context.c
             )
         elseif (FIPS_LINUX)
