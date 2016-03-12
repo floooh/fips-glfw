@@ -22,7 +22,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
         fips_dir(glfw/src GROUP .)
         fips_files(
             internal.h
-            context.c init.c input.c monitor.c window.c
+            context.c init.c input.c monitor.c vulkan.c window.c
         )
         if (FIPS_MACOS)
             add_definitions(-DFIPS_GLFW_MACOS=1)

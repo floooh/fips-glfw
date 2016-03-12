@@ -36,13 +36,13 @@
 
 // Define this to 1 if building GLFW for X11
 #if FIPS_GLFW_LINUX
-#define _GLFW_X11
+#define _GLFW_X11 (1)
 // Define this to 1 if building GLFW for Win32
 #elif FIPS_GLFW_WINDOWS
-#define _GLFW_WIN32
+#define _GLFW_WIN32 (1)
 // Define this to 1 if building GLFW for Cocoa
 #elif FIPS_GLFW_MACOS
-#define _GLFW_COCOA
+#define _GLFW_COCOA (1)
 // Define this to 1 if building GLFW for Wayland
 // #define _GLFW_WAYLAND
 // Define this to 1 if building GLFW for Mir
@@ -53,46 +53,27 @@
 // #define _GLFW_EGL
 // Define this to 1 if building GLFW for GLX
 #if FIPS_GLFW_LINUX
-#define _GLFW_GLX
+#define _GLFW_GLX (1)
 // Define this to 1 if building GLFW for WGL
 #elif FIPS_GLFW_WINDOWS
-#define _GLFW_WGL
+#define _GLFW_WGL (1)
 // Define this to 1 if building GLFW for NSGL
 #elif FIPS_GLFW_MACOS
-#define _GLFW_NSGL
+#define _GLFW_NSGL (1)
 #endif
 
 // Define this to 1 if building as a shared library / dynamic library / DLL
 // #define _GLFW_BUILD_DLL
 
-// Define this to 1 if glfwSwapInterval should ignore DWM compositing status
-// #define _GLFW_USE_DWM_SWAP_INTERVAL
-// Define this to 1 to force use of high-performance GPU on Optimus systems
-// #define _GLFW_USE_OPTIMUS_HPG
-
-#if FIPS_GLFW_LINUX
-// Define this to 1 if glXGetProcAddress is available
-#define _GLFW_HAS_GLXGETPROCADDRESS
-// Define this to 1 if glXGetProcAddressARB is available
-#define _GLFW_HAS_GLXGETPROCADDRESSARB
-// Define this to 1 if glXGetProcAddressEXT is available
-// #define _GLFW_HAS_GLXGETPROCADDRESSEXT
-// Define this to 1 if dlopen is available
-// #define _GLFW_HAS_DLOPEN
-#endif
+// Define this to 1 to force use of high-performance GPU on hybrid systems
+#define _GLFW_USE_HYBRID_HPG (1)
 
 // Define this to 1 if glfwInit should change the current directory
 // #define _GLFW_USE_CHDIR
 #if FIPS_GLFW_MACOS
 // Define this to 1 if glfwCreateWindow should populate the menu bar
-#define _GLFW_USE_MENUBAR
+#define _GLFW_USE_MENUBAR (1)
 // Define this to 1 if windows should use full resolution on Retina displays
 // #define _GLFW_USE_RETINA
 #endif
-// Define this to 1 if using OpenGL as the client library
-#define _GLFW_USE_OPENGL
-// Define this to 1 if using OpenGL ES 1.1 as the client library
-// #define _GLFW_USE_GLESV1
-// Define this to 1 if using OpenGL ES 2.0 as the client library
-// #define _GLFW_USE_GLESV2
 
