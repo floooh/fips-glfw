@@ -32,6 +32,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
                 cocoa_joystick.m cocoa_time.c posix_tls.c
                 nsgl_context.h nsgl_context.m
             )
+            fips_frameworks_osx(Cocoa CoreVideo OpenGL Carbon)
         elseif (FIPS_WINDOWS)
             add_definitions(-DFIPS_GLFW_WINDOWS=1)
             fips_files(
@@ -40,6 +41,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
                 win32_tls.c win32_window.c win32_joystick.c
                 wgl_context.h wgl_context.c
             )
+            fips_libs(opengl32)
         elseif (FIPS_LINUX)
             add_definitions(-DFIPS_GLFW_LINUX=1)
             fips_files(
@@ -49,6 +51,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
                 xkb_unicode.c linux_joystick.c posix_time.c posix_tls.c
                 glx_context.h glx_context.c
             )
+            fips_libs(X11 Xrandr Xi Xinerama Xxf86vm Xcursor GL m)
         endif()
     fips_end_lib()
 
