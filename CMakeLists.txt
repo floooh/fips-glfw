@@ -51,7 +51,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
                 xkb_unicode.c linux_joystick.c posix_time.c posix_tls.c
                 glx_context.h glx_context.c
             )
-            fips_libs(X11 Xrandr Xi Xinerama Xxf86vm Xcursor GL m)
+            fips_libs(X11 Xrandr Xi Xinerama Xxf86vm Xcursor GL m ${CMAKE_DL_LIBS})
         endif()
     fips_end_lib()
 
