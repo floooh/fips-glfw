@@ -40,6 +40,7 @@ if ((FIPS_MACOS OR FIPS_WINDOWS OR FIPS_LINUX) AND NOT FIPS_OSX_USE_ARC)
                 win32_init.c win32_monitor.c win32_time.c
                 win32_tls.c win32_window.c win32_joystick.c
                 wgl_context.h wgl_context.c
+                egl_context.h egl_context.c
             )
             fips_libs(opengl32)
         elseif (FIPS_LINUX)
