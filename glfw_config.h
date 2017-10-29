@@ -67,13 +67,3 @@
 
 // Define this to 1 to force use of high-performance GPU on hybrid systems
 #define _GLFW_USE_HYBRID_HPG (1)
-
-// Define this to 1 if glfwInit should change the current directory
-// #define _GLFW_USE_CHDIR
-#if FIPS_GLFW_MACOS
-// Define this to 1 if glfwCreateWindow should populate the menu bar
-#define _GLFW_USE_MENUBAR (1)
-// Define this to 1 if windows should use full resolution on Retina displays
-// #define _GLFW_USE_RETINA
-#endif
-
